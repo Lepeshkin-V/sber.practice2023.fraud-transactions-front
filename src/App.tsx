@@ -1,13 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Home } from './pages/Home/Home';
+import  Home  from './pages/Home/Home';
+import Layout from './Layouts/Layout';
 
 function App() {
   return (
-    <div className="App">
-      <Home />
-    </div>
+      <Layout>
+        <Home />
+      </Layout>
   );
 }
 
