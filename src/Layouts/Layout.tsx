@@ -1,4 +1,4 @@
-import Header from "../components/Header/Header";
+import Header from "../components/Header/header";
 import styles from './layout.module.css'
 
 type props = React.HTMLAttributes<HTMLDivElement>;
