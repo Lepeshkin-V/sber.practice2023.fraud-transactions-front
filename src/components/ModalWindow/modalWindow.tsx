@@ -1,5 +1,8 @@
+import { observer } from "mobx-react-lite";
 import { ReactElement, useEffect } from "react";
 import { TransactionType } from "../../common/types";
+import modalWindowStore from "../../strore/modalWindowStore";
+import style from "./modalWindow.module.css"
 
 interface ModalWindowProps {
     visible: boolean,
@@ -8,12 +11,10 @@ interface ModalWindowProps {
     onClose: () => void
 }
 
-const ModalWindow = ({
-    visible = false,
-    title = '',
-    content = '',
-    onClose
-}: ModalWindowProps) => {
+const ModalWindow = observer(() => {
+    const onClose = () => {
+        modalWindowStore.setVisible(false);
+    }
 
     const onKeyDown = ({ key }: KeyboardEvent) => {
         switch (key) {
@@ -28,18 +29,18 @@ const ModalWindow = ({
         return () => document.removeEventListener('keydown', onKeyDown)
       });
 
-    if (!visible) return null;
+    if (!modalWindowStore.visible) return null;
 
     return (
-        <div onClick={onClose}>
-            <div onClick={(e) => e.stopPropagation()}>
+        <div onClick={onClose} className = {style.outer_area}>
+            <div onClick={(e) => e.stopPropagation()} className = {style.modal_window}>
                 <div>
-                    <h3>Заголовок</h3>
+                    <h3>Клиент номер {modalWindowStore.title}</h3>
                 </div>
-
+                {modalWindowStore.content}
             </div>
         </div>
     );
-}
+})
 
 export default ModalWindow;

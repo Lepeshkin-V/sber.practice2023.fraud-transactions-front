@@ -1,5 +1,5 @@
 
-const FrodTableHeader = () => {
+const TransactionsTableHeader = () => {
     return (
         <thead>
             <tr>
@@ -16,4 +16,4 @@ const FrodTableHeader = () => {
     );
 }
 
-export default FrodTableHeader;
+export default TransactionsTableHeader;
