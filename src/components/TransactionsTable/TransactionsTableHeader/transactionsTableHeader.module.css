@@ -1,0 +1,9 @@
+.table_title {
+    font-family: 'table_title';
+}
+
+
+@font-face {
+    font-family: 'table_title';
+    src: url(../../../Assets/fonts/table_title.ttf);
+  }

@@ -1,0 +1,9 @@
+.table_body {
+  font-family: 'table';
+}
+
+@font-face {
+    font-family: 'table';
+    src: url(../../../Assets/fonts/table.ttf);
+  }
+  

@@ -1,6 +1,7 @@
 import { observer } from "mobx-react-lite";
 import { TransactionType } from "../../../../common/types";
 import modalWindowStore from "../../../../strore/modalWindowStore";
+import ContentModalWindow from "../../../ModalWindow/ContentModalWindow/contentModalWindow";
 import style from "./transactionsTableCell.module.css"
 interface TransactionsTableCellProps {
     transaction: TransactionType,
@@ -10,7 +11,8 @@ const TransactionsTableCell = (props: TransactionsTableCellProps) => {
     
     const onOpen = () => {
         modalWindowStore.setVisible(true);
-        modalWindowStore.setTitle(props.transaction.client)
+        modalWindowStore.setTitle(props.transaction.id)
+        modalWindowStore.setContent(props.transaction)
     }
     return (
             <tr onClick={onOpen}>

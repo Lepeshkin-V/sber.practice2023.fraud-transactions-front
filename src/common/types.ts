@@ -25,3 +25,8 @@ export type UserType = {
     passport_valid_to: string,
     phone: string
 };
+
+export type SortConfigType = {
+    key: string,
+    direction: boolean
+}
