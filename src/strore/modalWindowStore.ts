@@ -1,7 +1,7 @@
 import { template_transaction } from './../common/templates';
 import { action, makeAutoObservable } from "mobx";
 import { TransactionType } from '../common/types';
-import columnsTable from '../common/columns';
+import { columnsTable } from '../common/enums';
 
 class modalWindowStore {
     visible: boolean ;
@@ -34,4 +34,6 @@ class modalWindowStore {
     }
 }
 
-export default new modalWindowStore();
+const store = new modalWindowStore()
+
+export default store;

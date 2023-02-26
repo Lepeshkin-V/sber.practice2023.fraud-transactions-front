@@ -27,8 +27,8 @@ const ModalWindow = observer(() => {
 
     if (!modalWindowStore.visible) return null;
 
-    const frodDesignate = (countFrod?: number) => {
-        if ((countFrod ? countFrod : 0) >= 3) {
+    const frodDesignate = (countFrod: number) => {
+        if (countFrod  >= 3) {
             return <FaExclamationTriangle style={{ color: '#E85A4F', paddingBottom: 5, }} />
         }
         else
@@ -40,7 +40,7 @@ const ModalWindow = observer(() => {
             <div onClick={(e) => e.stopPropagation()} className={style.modal_window}>
 
                 <div className={style.modal_title}>
-                    <h3>Транзакция № {modalWindowStore.title} {frodDesignate(modalWindowStore.content.count_patterns)}</h3>
+                    <h3>Транзакция № {modalWindowStore.title} {frodDesignate(modalWindowStore.content.frauds.length)}</h3>
                     <span className={style.modal_close} onClick={onClose}>
                         < AiFillCloseCircle style={{ color: '#8E8D8a', fontSize: '35px' }} />
                     </span>

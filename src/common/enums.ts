@@ -1,4 +1,4 @@
-enum columnsTable {
+export enum columnsTable {
     id = 'id',
     date = 'date',
     account = 'account',
@@ -18,4 +18,11 @@ enum columnsTable {
     changing_the_city = 'changing_the_city',
 }
 
-export default columnsTable;
+export enum fraudsTypes {
+    passport_error = 'Просрочен паспорт',
+    fast_transaction = 'Чрезмерная частота транзакций',
+    many_rejects = 'Большое количество отказов',
+    fast_change_locations = 'Быстрая смена локаций',
+    many_transactions = 'Большое количество транзакций',
+    night_activity = 'Высокая ночная активность'
+}

@@ -1,4 +1,4 @@
-import columnsTable from "./columns";
+import { columnsTable, fraudsTypes } from "./enums";
 
 export type TransactionType = {
     id: number,
@@ -27,8 +27,7 @@ export type TransactionType = {
     count_reject_1_hour: number,
     time_last_tr: number,
     changing_the_city: number,
-    frauds?: columnsTable[],
-    count_patterns?: number,
+    frauds: FraudType[],
     createdAt: string,
     updatedAt: string,
 };
@@ -36,7 +35,7 @@ export type TransactionType = {
 export type FraudType = {
     id: number,
     transaction_id: number,
-    fraud_type: string,
+    fraud_type: fraudsTypes,
     scores: number,
     createdAt: string,
     updatedAt: string,

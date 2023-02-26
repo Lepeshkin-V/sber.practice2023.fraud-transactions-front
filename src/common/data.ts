@@ -1,22 +1,164 @@
+import { fraudsTypes } from './enums';
 import { TransactionType, FraudType } from './types';
 
-export const frauds: FraudType[] = [
+const frauds1: FraudType[] = [
     {
         id: 0,
-        transaction_id: 9265458525,
-        fraud_type: 'Тип1',
-        scores: 1,
+        transaction_id: 1,
+        fraud_type: fraudsTypes.passport_error,
+        scores: 0,
         createdAt: "дата",
         updatedAt: 'дата'
     },
     {
         id: 1,
-        transaction_id: 9265458525,
-        fraud_type: 'Тип2',
-        scores: 1,
+        transaction_id: 1,
+        fraud_type: fraudsTypes.fast_transaction,
+        scores: 0,
         createdAt: "дата",
         updatedAt: 'дата'
-    }
+    },
+    {
+        id: 2,
+        transaction_id: 1,
+        fraud_type: fraudsTypes.many_rejects,
+        scores: 0,
+        createdAt: "дата",
+        updatedAt: 'дата'
+    },
+
+]
+
+const frauds2: FraudType[] = [
+    {
+        id: 3,
+        transaction_id: 5,
+        fraud_type: fraudsTypes.passport_error,
+        scores: 0,
+        createdAt: "дата",
+        updatedAt: 'дата'
+    },
+    {
+        id: 4,
+        transaction_id: 5,
+        fraud_type: fraudsTypes.fast_transaction,
+        scores: 0,
+        createdAt: "дата",
+        updatedAt: 'дата'
+    },
+    {
+        id: 5,
+        transaction_id: 5,
+        fraud_type: fraudsTypes.many_rejects,
+        scores: 0,
+        createdAt: "дата",
+        updatedAt: 'дата'
+    },
+    {
+        id: 6,
+        transaction_id: 5,
+        fraud_type: fraudsTypes.fast_change_locations,
+        scores: 0,
+        createdAt: "дата",
+        updatedAt: 'дата'
+    },
+
+]
+
+const frauds3: FraudType[] = [
+    {
+        id: 7,
+        transaction_id: 11,
+        fraud_type: fraudsTypes.passport_error,
+        scores: 0,
+        createdAt: "дата",
+        updatedAt: 'дата'
+    },
+    {
+        id: 8,
+        transaction_id: 11,
+        fraud_type: fraudsTypes.fast_transaction,
+        scores: 0,
+        createdAt: "дата",
+        updatedAt: 'дата'
+    },
+    {
+        id: 9,
+        transaction_id: 11,
+        fraud_type: fraudsTypes.many_rejects,
+        scores: 0,
+        createdAt: "дата",
+        updatedAt: 'дата'
+    },
+    {
+        id: 10,
+        transaction_id: 11,
+        fraud_type: fraudsTypes.fast_change_locations,
+        scores: 0,
+        createdAt: "дата",
+        updatedAt: 'дата'
+    },
+    {
+        id: 11,
+        transaction_id: 11,
+        fraud_type: fraudsTypes.many_transactions,
+        scores: 0,
+        createdAt: "дата",
+        updatedAt: 'дата'
+    },
+
+]
+
+const frauds4: FraudType[] = [
+    {
+        id: 12,
+        transaction_id: 15,
+        fraud_type: fraudsTypes.passport_error,
+        scores: 0,
+        createdAt: "дата",
+        updatedAt: 'дата'
+    },
+    {
+        id: 13,
+        transaction_id: 15,
+        fraud_type: fraudsTypes.fast_transaction,
+        scores: 0,
+        createdAt: "дата",
+        updatedAt: 'дата'
+    },
+    {
+        id: 14,
+        transaction_id: 15,
+        fraud_type: fraudsTypes.many_rejects,
+        scores: 0,
+        createdAt: "дата",
+        updatedAt: 'дата'
+    },
+    {
+        id: 15,
+        transaction_id: 15,
+        fraud_type: fraudsTypes.fast_change_locations,
+        scores: 0,
+        createdAt: "дата",
+        updatedAt: 'дата'
+    },
+    {
+        id: 16,
+        transaction_id: 15,
+        fraud_type: fraudsTypes.many_transactions,
+        scores: 0,
+        createdAt: "дата",
+        updatedAt: 'дата'
+    },
+    {
+        id: 17,
+        transaction_id: 15,
+        fraud_type: fraudsTypes.night_activity,
+        scores: 0,
+        createdAt: "дата",
+        updatedAt: 'дата'
+    },
+
 ]
 
 export const transactions: TransactionType[] = [
@@ -33,7 +175,7 @@ export const transactions: TransactionType[] = [
         date_of_birth: 'string',
         passport: 'string',
         passport_valid_to: '2020-05-03',
-        phone: 'string',
+        phone: '+79083165608',
         oper_type: 'Снятие',
         amount:	11281.49,
         oper_result: 'Успешно',
@@ -47,7 +189,7 @@ export const transactions: TransactionType[] = [
         count_reject_1_hour: 5,
         time_last_tr: 30,
         changing_the_city: 1,
-        frauds: [],
+        frauds: [...frauds1],
         createdAt: 'дата',
         updatedAt: 'дата'
     },
@@ -64,7 +206,7 @@ export const transactions: TransactionType[] = [
         date_of_birth: 'string',
         passport: 'string',
         passport_valid_to: '2020-05-03',
-        phone: 'string',
+        phone: '+79083165608',
         oper_type: 'Снятие',
         amount:	11281.49,
         oper_result: 'Аспешно',
@@ -95,7 +237,7 @@ export const transactions: TransactionType[] = [
         date_of_birth: 'string',
         passport: 'string',
         passport_valid_to: '2020-05-03',
-        phone: 'string',
+        phone: '+79083165608',
         oper_type: 'Снятие',
         amount:	11281.49,
         oper_result: 'Успешно',
@@ -126,7 +268,7 @@ export const transactions: TransactionType[] = [
         date_of_birth: 'string',
         passport: 'string',
         passport_valid_to: '2020-05-03',
-        phone: 'string',
+        phone: '+79083165608',
         oper_type: 'Снятие',
         amount:	11281.49,
         oper_result: 'Успешно',
@@ -157,7 +299,7 @@ export const transactions: TransactionType[] = [
         date_of_birth: 'string',
         passport: 'string',
         passport_valid_to: '2020-05-03',
-        phone: 'string',
+        phone: '+79083165608',
         oper_type: 'Снятие',
         amount:	11281.49,
         oper_result: 'Аспешно',
@@ -171,7 +313,7 @@ export const transactions: TransactionType[] = [
         count_reject_1_hour: 5,
         time_last_tr: 86400,
         changing_the_city: 0,
-        frauds: [],
+        frauds: [...frauds2],
         createdAt: 'дата',
         updatedAt: 'дата'
     },
@@ -188,7 +330,7 @@ export const transactions: TransactionType[] = [
         date_of_birth: 'string',
         passport: 'string',
         passport_valid_to: '2020-05-03',
-        phone: 'string',
+        phone: '+79083165608',
         oper_type: 'Снятие',
         amount:	11281.49,
         oper_result: 'Успешно',
@@ -219,7 +361,7 @@ export const transactions: TransactionType[] = [
         date_of_birth: 'string',
         passport: 'string',
         passport_valid_to: '2020-05-03',
-        phone: 'string',
+        phone: '+79083165608',
         oper_type: 'Снятие',
         amount:	11281.49,
         oper_result: 'Успешно',
@@ -250,7 +392,7 @@ export const transactions: TransactionType[] = [
         date_of_birth: 'string',
         passport: 'string',
         passport_valid_to: '2020-05-03',
-        phone: 'string',
+        phone: '+79083165608',
         oper_type: 'Снятие',
         amount:	11281.49,
         oper_result: 'Аспешно',
@@ -281,7 +423,7 @@ export const transactions: TransactionType[] = [
         date_of_birth: 'string',
         passport: 'string',
         passport_valid_to: '2020-05-03',
-        phone: 'string',
+        phone: '+79083165608',
         oper_type: 'Снятие',
         amount:	11281.49,
         oper_result: 'Успешно',
@@ -312,7 +454,7 @@ export const transactions: TransactionType[] = [
         date_of_birth: 'string',
         passport: 'string',
         passport_valid_to: '2020-05-03',
-        phone: 'string',
+        phone: '+79083165608',
         oper_type: 'Снятие',
         amount:	11281.49,
         oper_result: 'Успешно',
@@ -343,7 +485,7 @@ export const transactions: TransactionType[] = [
         date_of_birth: 'string',
         passport: 'string',
         passport_valid_to: '2020-05-03',
-        phone: 'string',
+        phone: '+79083165608',
         oper_type: 'Снятие',
         amount:	11281.49,
         oper_result: 'Аспешно',
@@ -357,7 +499,7 @@ export const transactions: TransactionType[] = [
         count_reject_1_hour: 5,
         time_last_tr: 86400,
         changing_the_city: 0,
-        frauds: [],
+        frauds: [...frauds3],
         createdAt: 'дата',
         updatedAt: 'дата'
     },
@@ -374,7 +516,7 @@ export const transactions: TransactionType[] = [
         date_of_birth: 'string',
         passport: 'string',
         passport_valid_to: '2020-05-03',
-        phone: 'string',
+        phone: '+79083165608',
         oper_type: 'Снятие',
         amount:	11281.49,
         oper_result: 'Успешно',
@@ -405,7 +547,7 @@ export const transactions: TransactionType[] = [
         date_of_birth: 'string',
         passport: 'string',
         passport_valid_to: '2020-05-03',
-        phone: 'string',
+        phone: '+79083165608',
         oper_type: 'Снятие',
         amount:	11281.49,
         oper_result: 'Успешно',
@@ -436,7 +578,7 @@ export const transactions: TransactionType[] = [
         date_of_birth: 'string',
         passport: 'string',
         passport_valid_to: '2020-05-03',
-        phone: 'string',
+        phone: '+79083165608',
         oper_type: 'Снятие',
         amount:	11281.49,
         oper_result: 'Аспешно',
@@ -467,7 +609,7 @@ export const transactions: TransactionType[] = [
         date_of_birth: 'string',
         passport: 'string',
         passport_valid_to: '2020-05-03',
-        phone: 'string',
+        phone: '+79083165608',
         oper_type: 'Снятие',
         amount:	11281.49,
         oper_result: 'Успешно',
@@ -481,9 +623,8 @@ export const transactions: TransactionType[] = [
         count_reject_1_hour: 5,
         time_last_tr: 86400,
         changing_the_city: 0,
-        frauds: [],
+        frauds: [...frauds4],
         createdAt: 'дата',
         updatedAt: 'дата'
     }
 ]
-

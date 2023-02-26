@@ -1,12 +1,12 @@
 import { observer } from "mobx-react-lite";
-import columnsTable from "../../../common/columns";
+import { columnsTable } from "../../../common/enums";
 import transactionsStore from "../../../strore/transactionsStore";
 import style from "./transactionsTableHeader.module.css";
 
 const TransactionsTableHeader = observer(() => {
 
     const direction = (columnName: columnsTable, name: string) => {
-        if (columnName != transactionsStore.sortConfig.key) {
+        if (columnName !== transactionsStore.sortConfig.key) {
             return <th onClick={() => transactionsStore.sortTransaction(columnName)}>{name}</th>
         } else {
             if (columnName === transactionsStore.sortConfig.key && transactionsStore.sortConfig.direction === true) {
@@ -33,15 +33,11 @@ const TransactionsTableHeader = observer(() => {
                 {direction(columnsTable.oper_type, 'Type')}
                 {direction(columnsTable.amount, 'Amount')}
                 {direction(columnsTable.oper_result, 'Result')}
-                {direction(columnsTable.terminal_type, 'Terminal type')}
                 {direction(columnsTable.city, 'City')}
-                {direction(columnsTable.age, 'Age')}
                 {direction(columnsTable.count_tr_day, 'Count by day')}
                 {direction(columnsTable.count_tr_hour, 'Count by hour')}
                 {direction(columnsTable.count_reject_1_hour, 'Count reject 1 hour')}
                 {direction(columnsTable.time_last_tr, 'Time last')}
-                {direction(columnsTable.changing_the_city, 'Changing the city')}
-                
             </tr>
         </thead>
     );

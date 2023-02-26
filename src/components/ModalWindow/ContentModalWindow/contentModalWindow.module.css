@@ -1,3 +1,7 @@
+.note {
+    background-color: #e8594f48 !important;
+}
+
 .content_block {
     display: flex;
     justify-content: center;

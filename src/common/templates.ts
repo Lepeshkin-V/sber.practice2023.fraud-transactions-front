@@ -1,4 +1,4 @@
-import { FraudType, SortConfigType, TransactionType,} from "./types"
+import { SortConfigType, TransactionType,} from "./types"
 
 export const template_transaction: TransactionType = {
     id: 0,
@@ -30,15 +30,6 @@ export const template_transaction: TransactionType = {
     frauds: [],
     createdAt: '',
     updatedAt: ''
-}
-
-export const template_fraud: FraudType = {
-    id: 0,
-    transaction_id: 0,
-    fraud_type: "",
-    scores: 0,
-    createdAt: "",
-    updatedAt: ""
 }
 
 export const template_sortConfig: SortConfigType = {

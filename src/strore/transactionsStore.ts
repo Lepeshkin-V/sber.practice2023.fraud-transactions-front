@@ -1,7 +1,7 @@
 import { TransactionType, SortConfigType } from './../common/types';
 import { action, makeAutoObservable } from "mobx";
 import { transactions } from '../common/data';
-import columnsTable from '../common/columns';
+import { columnsTable } from '../common/enums';
 import { template_sortConfig } from '../common/templates';
 
 class TransactionsStore {
@@ -16,18 +16,32 @@ class TransactionsStore {
 
     @action dropFilters() {
         this.transactionsList = transactions;
+        this.sortConfig = template_sortConfig;
     }
 
     @action frodOnly() {
-        this.transactionsList = this.transactionsList.filter(t => (t.count_patterns ? t.count_patterns : 0) >= 3);
+        this.transactionsList = this.transactionsList.filter(t => t.frauds.length >= 3);
+
+        if (this.sortConfig.key === 'frauds' && this.sortConfig.direction === true) {
+            this.sortConfig.direction = false;
+        }
+        else {
+            if (this.sortConfig.key === 'frauds' && this.sortConfig.direction === false) {
+                this.sortConfig.direction = true;
+            }
+            else {
+                this.sortConfig.key = 'frauds';
+                this.sortConfig.direction = true;
+            }
+        }
 
         this.transactionsList.sort((a, b) => {
-            if (a['count_patterns'] && b['count_patterns']) {
-                if (a['count_patterns'] < b['count_patterns']) {
-                    return 1;
+            if (a['frauds'].length && b['frauds'].length) {
+                if (a['frauds'].length < b['frauds'].length) {
+                    return this.sortConfig.direction === true ? 1 : -1;
                 }
-                if (a['count_patterns'] > b['count_patterns']) {
-                    return -1;
+                if (a['frauds'].length > b['frauds'].length) {
+                    return this.sortConfig.direction === true ? -1 : 1;
                 }
             }
             return 0;
@@ -60,4 +74,6 @@ class TransactionsStore {
     }
 }
 
-export default new TransactionsStore()
+const store = new TransactionsStore();
+
+export default store;
