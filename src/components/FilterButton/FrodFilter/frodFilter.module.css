@@ -1,0 +1,14 @@
+.frodButton {
+    box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+  border: 2px solid #a6a5a5;
+  border-radius: 6px;
+  background-color: #e2d5c3;
+
+}
+.frodButton:active {
+    transform: scale(0.98);
+}
+
+.frodButton:hover {
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.24);
+  }

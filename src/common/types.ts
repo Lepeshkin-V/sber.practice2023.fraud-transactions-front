@@ -1,22 +1,12 @@
+import columnsTable from "./columns";
+
 export type TransactionType = {
-    id: string,
+    id: number,
     date: string,
     card: string,
     account: string,
     account_valid_to: string,
     client: string,
-    userInfo: UserType,
-    oper_type: string,
-    amount: number,
-    oper_result: string,
-    terminal: string,
-    terminal_type: string,
-    city: string,
-    address: string
-};
-
-export type UserType = {
-    id: string,
     last_name: string,
     first_name: string,
     patronymic: string,
@@ -24,7 +14,33 @@ export type UserType = {
     passport: string,
     passport_valid_to: string,
     phone: string
+    oper_type: string,
+    amount: number,
+    oper_result: string,
+    terminal: string,
+    terminal_type: string,
+    city: string,
+    address: string,
+    age: number,
+    count_tr_day: number,
+    count_tr_hour: number,
+    count_reject_1_hour: number,
+    time_last_tr: number,
+    changing_the_city: number,
+    frauds?: columnsTable[],
+    count_patterns?: number,
+    createdAt: string,
+    updatedAt: string,
 };
+
+export type FraudType = {
+    id: number,
+    transaction_id: number,
+    fraud_type: string,
+    scores: number,
+    createdAt: string,
+    updatedAt: string,
+}
 
 export type SortConfigType = {
     key: string,

@@ -1,4 +1,27 @@
 .content_block {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+}
+
+.heads {
+    font-family: 'modal_content_title';
+}
+
+@font-face {
+    font-family: 'modal_content_title';
+    src: url(../../../Assets/fonts/table_title.ttf);
+  }
+
+.detales_tr {
+    border-right: 1px solid #dbdbdb;
+    margin-right: 5px;
+}
+
+.client_info {
+    border-right: 1px solid #dbdbdb;
+    margin-right: 5px;
+}
+
+.fraud1, .fraud2, .fraud3, .fraud4, .fraud5, .fraud6, .fraud7 {
+    background-color: rgba(255, 0, 0, 0.333) !important;
 }

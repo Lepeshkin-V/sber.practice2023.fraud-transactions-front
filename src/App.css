@@ -1,3 +1,12 @@
+button {
+  color: #8E8D8A;
+}
+
+body {
+  color: #8E8D8A !important;
+  background-color: #EAE7DC;
+}
+
 .App {
   text-align: center;
 }
@@ -26,6 +35,10 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.footer {
+  text-align: center;
 }
 
 @keyframes App-logo-spin {

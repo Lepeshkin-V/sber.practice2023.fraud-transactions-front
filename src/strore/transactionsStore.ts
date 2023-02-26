@@ -1,8 +1,8 @@
 import { TransactionType, SortConfigType } from './../common/types';
-import { action, computed, makeAutoObservable, observable } from "mobx";
+import { action, makeAutoObservable } from "mobx";
 import { transactions } from '../common/data';
 import columnsTable from '../common/columns';
-import { sortConfig } from '../common/templates';
+import { template_sortConfig } from '../common/templates';
 
 class TransactionsStore {
     transactionsList: TransactionType[];
@@ -11,10 +11,31 @@ class TransactionsStore {
     constructor() {
         makeAutoObservable(this)
         this.transactionsList = transactions;
-        this.sortConfig = sortConfig
+        this.sortConfig = template_sortConfig;
+    }
+
+    @action dropFilters() {
+        this.transactionsList = transactions;
+    }
+
+    @action frodOnly() {
+        this.transactionsList = this.transactionsList.filter(t => (t.count_patterns ? t.count_patterns : 0) >= 3);
+
+        this.transactionsList.sort((a, b) => {
+            if (a['count_patterns'] && b['count_patterns']) {
+                if (a['count_patterns'] < b['count_patterns']) {
+                    return 1;
+                }
+                if (a['count_patterns'] > b['count_patterns']) {
+                    return -1;
+                }
+            }
+            return 0;
+        });
     }
 
     @action sortTransaction(sortedField: columnsTable) {
+
         if (this.sortConfig.key === sortedField && this.sortConfig.direction === true) {
             this.sortConfig.direction = false;
         }
@@ -27,10 +48,6 @@ class TransactionsStore {
                 this.sortConfig.direction = true;
             }
         }
-
-        console.log(this.sortConfig.key);
-        console.log(this.sortConfig.direction);
-
         this.transactionsList.sort((a, b) => {
             if (a[sortedField] < b[sortedField]) {
                 return this.sortConfig.direction === true ? -1 : 1;
@@ -41,7 +58,6 @@ class TransactionsStore {
             return 0;
         });
     }
-
 }
 
 export default new TransactionsStore()

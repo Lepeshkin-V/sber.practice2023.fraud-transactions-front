@@ -1,5 +1,16 @@
 .header {
     font-family: 'title';
+    text-align: center;
+    border-bottom: 1px solid #dbdbdb;
+    height: 10%;
+    max-height: 100px;
+    min-height: 50px;
+    margin-bottom: 20px;
+    color: #E85A4F;
+}
+
+.title {
+    font-size: 54px;
 }
 
 @font-face {

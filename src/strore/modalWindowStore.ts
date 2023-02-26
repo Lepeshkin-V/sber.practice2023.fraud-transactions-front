@@ -1,32 +1,36 @@
 import { template_transaction } from './../common/templates';
-import { UserType } from './../common/types';
-import { transactions } from './../common/data';
-import { action, computed, makeAutoObservable, observable } from "mobx";
-import { ReactElement } from "react";
+import { action, makeAutoObservable } from "mobx";
 import { TransactionType } from '../common/types';
+import columnsTable from '../common/columns';
 
 class modalWindowStore {
     visible: boolean ;
-    title: string = '';
+    title: number;
     content: TransactionType;
+    note: columnsTable[];
 
     constructor() {
         makeAutoObservable(this)
         this.visible = false;
-        this.title = '';
-        this.content = template_transaction;  
+        this.title = 0;
+        this.content = template_transaction;
+        this.note = [];
     }
 
     @action setVisible(isVisible: boolean) {
         this.visible = isVisible;
     }
 
-    @action setTitle(title: string) {
+    @action setTitle(title: number) {
         this.title = title;
     }
 
     @action setContent(content: TransactionType) {
         this.content = content;
+    }
+
+    @action addNote(columnsTable: columnsTable){
+        this.note.push(columnsTable);
     }
 }
 

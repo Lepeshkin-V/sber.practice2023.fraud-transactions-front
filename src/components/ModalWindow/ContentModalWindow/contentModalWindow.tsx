@@ -6,15 +6,17 @@ interface ContentModalWindowProps {
 }
 
 
+
 const ContentModalWindow = (props: ContentModalWindowProps) => {
+   
     return (
         <div className={style.content_block}>
-            <div>
-                <p>Детали транзакции</p>
-                <p>Дата: {props.transaction.date}</p>
+            <div className={style.detales_tr}>
+                <p className={style.heads}> <b>Детали транзакции</b></p>
+                <p>Дата: {new Date(props.transaction.date).toLocaleString()}</p>
                 <p>Номер карты: {props.transaction.card}</p>
                 <p>Номер счета: {props.transaction.account}</p>
-                <p>Окончание срока действия счета: {props.transaction.account_valid_to}</p>
+                <p>Окончание срока действия счета: {new Date(props.transaction.account_valid_to).toLocaleDateString()}</p>
                 <p>Тип операции: {props.transaction.oper_type}</p>
                 <p>Сумма: {props.transaction.amount}</p>
                 <p>Результат операции: {props.transaction.oper_result}</p>
@@ -23,16 +25,25 @@ const ContentModalWindow = (props: ContentModalWindowProps) => {
                 <p>Город: {props.transaction.city}</p>
                 <p>Адрес: {props.transaction.address}</p>
             </div>
-            <div>
-                <p>Информация о клиенте</p>
-                <p>Номер: {props.transaction.userInfo.id}</p>
-                <p>Фамилия: {props.transaction.userInfo.last_name}</p>
-                <p>Имя: {props.transaction.userInfo.first_name}</p>
-                <p>Отчество: {props.transaction.userInfo.patronymic}</p>
-                <p>Дата рождения: {props.transaction.userInfo.date_of_birth}</p>
-                <p>Номер паспорта: {props.transaction.userInfo.passport}</p>
-                <p>Окончание срока действия паспорта: {props.transaction.userInfo.passport_valid_to}</p>
-                <p>Номер телефона: {props.transaction.userInfo.phone}</p>
+            <div className={style.client_info}>
+                <p className={style.heads}><b>Информация о клиенте</b></p>
+                <p>Номер: {props.transaction.client}</p>
+                <p>Фамилия: {props.transaction.last_name}</p>
+                <p>Имя: {props.transaction.first_name}</p>
+                <p>Отчество: {props.transaction.patronymic}</p>
+                <p>Дата рождения: {props.transaction.date_of_birth}</p>
+                <p>Номер паспорта: {props.transaction.passport}</p>
+                <p>Окончание срока действия паспорта: {props.transaction.passport_valid_to}</p>
+                <p>Номер телефона: {props.transaction.phone}</p>
+            </div>
+            <div className={style.dop_info}>
+                <p className={style.heads}><b>Дополнительная информация</b></p>
+                <p>Возраст: {props.transaction.age}</p>
+                <p>Количество за день: {props.transaction.count_tr_day}</p>
+                <p>Количество за час: {props.transaction.count_tr_hour}</p>
+                <p>Отказов за час: {props.transaction.count_reject_1_hour}</p>
+                <p>Время с последней: {props.transaction.time_last_tr}</p>
+                <p>Смена города: {props.transaction.changing_the_city}</p>
             </div>
         </div>
 

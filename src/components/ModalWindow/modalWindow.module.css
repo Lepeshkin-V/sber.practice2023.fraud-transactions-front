@@ -17,10 +17,9 @@
 
 .modal_window {
   width: 100%;
-  max-width: 750px;
+  max-width: 950px;
   background: white !important;
   position: relative;
-  margin: 0 20px;
   max-height: calc(100vh - 40px);
   text-align: left;
   display: flex;
@@ -31,6 +30,8 @@
   -webkit-animation-duration: 0.4s;
   animation-name: slide-in;
   animation-duration: 0.5s;
+  border-width: 0 1px;
+  padding: 1rem 1rem
 }
 
 .modal_title {
@@ -40,6 +41,16 @@
   border-bottom: 1px solid #dbdbdb;
 }
 
+.modal_close {
+  cursor: pointer;
+  padding: 1rem;
+  margin: -1rem -1rem -1rem auto;
+}
+
+.modal_close:active {
+  transform: scale(0.98);
+}
+
 .button_close {
   box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
   border: 2px solid #a6a5a5;
@@ -47,8 +58,12 @@
 }
 
 .button_close:active {
-  transform: scale(0.98);
+  transform: scale(0.96);
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+.button_close:hover {
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.24);
 }
 
 .modal_footer {
@@ -58,6 +73,10 @@
   border-top: 1px solid #dbdbdb;
   justify-content: flex-end;
 
+}
+
+.frod3 {
+  background-color: rgba(255, 0, 0, 1) !important;
 }
 
 @font-face {
