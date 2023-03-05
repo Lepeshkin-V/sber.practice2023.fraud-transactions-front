@@ -1,13 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import  Home  from './pages/Home/Home';
 import Layout from './Layouts/Layout';
+import { routes } from './routes';
+import { RouteObject, useRoutes } from 'react-router-dom';
 
 function App() {
+  const routing: RouteObject[] = routes;
+  const element = useRoutes(routing);
+
   return (
       <Layout>
-        <Home />
+        {element}
       </Layout>
   );
 }

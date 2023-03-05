@@ -6,9 +6,18 @@ body {
   color: #8E8D8A !important;
   background-color: #EAE7DC;
 }
+main {
+  display: flex;
+}
+
+ul  { list-style: none; }
 
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
 }
 
 .App-logo {
