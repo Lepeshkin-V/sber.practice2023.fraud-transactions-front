@@ -28,7 +28,7 @@ const TransactionsTableCell = (props: TransactionsTableCellProps) => {
         }
     }
     return (
-        <tr onClick={onOpen} className={frodDesignate(props.transaction.frauds.length)}>
+        <tr onClick={onOpen} className={frodDesignate(props.transaction.fraud.length)}>
             <td>{props.transaction.id}</td>
             <td>{new Date(props.transaction.date).toLocaleString()}</td>
             <td>{props.transaction.account}</td>

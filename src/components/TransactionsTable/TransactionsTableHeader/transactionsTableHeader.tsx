@@ -7,14 +7,14 @@ const TransactionsTableHeader = observer(() => {
 
     const direction = (columnName: columnsTable, name: string) => {
         if (columnName !== transactionsStore.sortConfig.key) {
-            return <th onClick={() => transactionsStore.sortTransaction(columnName)}>{name}</th>
+            return <th onClick={() => transactionsStore.sortTransactions(columnName)}>{name}</th>
         } else {
             if (columnName === transactionsStore.sortConfig.key && transactionsStore.sortConfig.direction === true) {
-                return <th onClick={() => transactionsStore.sortTransaction(columnName)}>{name} ↓</th>
+                return <th onClick={() => transactionsStore.sortTransactions(columnName)}>{name} ↓</th>
             }
             else {
                 if (columnName === transactionsStore.sortConfig.key && transactionsStore.sortConfig.direction === false) {
-                    return <th onClick={() => transactionsStore.sortTransaction(columnName)}>{name} ↑</th>
+                    return <th onClick={() => transactionsStore.sortTransactions(columnName)}>{name} ↑</th>
                 }
             }
         }

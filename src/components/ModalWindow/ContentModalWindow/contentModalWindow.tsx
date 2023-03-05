@@ -10,7 +10,7 @@ const ContentModalWindow = (props: ContentModalWindowProps) => {
 
     const note = (fraudPattern: fraudsTypes) => {
         let s = '';
-        props.transaction.frauds.forEach(f => {
+        props.transaction.fraud.forEach(f => {
             if (f.fraud_type === fraudPattern) { 
                 s = style.note;
             }
