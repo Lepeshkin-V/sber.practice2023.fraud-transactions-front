@@ -1,0 +1,49 @@
+.pag{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.pagContainer{
+    display: flex;
+}
+
+.pagElem {
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 3px;
+    border: 2px solid #a6a5a5;
+    background-color: #e2d5c3;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 37px;
+    height: 37px;
+    list-style-type: none;
+    transition: background-color 0.2s;
+}
+
+.pagElem:hover {
+    background-color: rgb(221, 221, 221);
+    transition: background-color 0.2s;
+}
+
+.active {
+  box-shadow: 3px 1px 1px 1px rgba(0, 0, 0, 0.24);
+}
+
+.active:hover {
+    background-color: rgb(231, 212, 135);
+}
+
+@media screen and (max-width: 450px) {
+    .pagElem {
+        font-size: 16px;
+        width: 30px;
+        height: 30px;
+        margin: 1px;
+    }
+}

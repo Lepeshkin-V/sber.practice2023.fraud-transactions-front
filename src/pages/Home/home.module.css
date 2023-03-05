@@ -1,6 +1,8 @@
 .main_block{
-    max-width: 80%;
+    display: flex;
+    flex-direction: column;
     margin: 0 auto;
+    flex-grow: 1;
 }
 
 .buttons_block {
