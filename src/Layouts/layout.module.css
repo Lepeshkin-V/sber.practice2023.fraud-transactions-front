@@ -1,6 +1,23 @@
+main {
+    height: 100%;
+    width: 90%;
+    margin: 0 auto;
+    background-color: #EAE7DC;
+    color: #8E8D8A !important;
+    display: flex !important;
+    flex-direction: column;
+    flex: 1 0 auto;
+    flex-grow: 1;
+}
+
 .wrapper{
-    height: 100vh;
+    height: 100%;
     width: 100%;
     background-color: #EAE7DC;
     color: #8E8D8A !important;
+    display: flex !important;
+    flex-direction: column;
+    min-height: 100vh;
+    flex: 1 0 auto;
+    flex-grow: 1;
 }
