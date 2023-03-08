@@ -1,6 +1,6 @@
 {
   "name": "frod_transactions",
-  "homepage": "home/page/1",
+  "homepage": "home/fraud/0/limit/10/page/1",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -14,8 +14,10 @@
     "@types/react-dom": "^18.0.11",
     "bootstrap": "^5.2.3",
     "chart.js": "^4.2.1",
+    "date-fns": "^2.29.3",
     "mobx": "^6.8.0",
     "mobx-react-lite": "^3.4.0",
+    "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.2",
     "react-bootstrap-table": "^4.3.1",
