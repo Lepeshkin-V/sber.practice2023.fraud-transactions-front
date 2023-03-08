@@ -6,7 +6,6 @@ import { RouteObject, useRoutes } from 'react-router-dom';
 function App() {
   const routing: RouteObject[] = routes;
   const element = useRoutes(routing);
-
   return (
       <Layout>
         {element}

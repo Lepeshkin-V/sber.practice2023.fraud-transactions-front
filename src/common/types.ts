@@ -44,10 +44,10 @@ export type FraudType = {
 
 export type SortConfigType = {
     key: number,
-    direction: boolean
+    direction: number
 }
 
-export type StatisticType = {
+export type DailyStatisticType = {
     date: string,
     freq1: number,
     freq2: number,
@@ -58,12 +58,12 @@ export type StatisticType = {
     total: number
 }
 
-export type FraudStatisticType = {
+export type HourlyStatisticType = {
     date: string,
     freq: number
 }
 
-export type LineStatisticType = {
+export type LineDailyStatisticType = {
     date: string[],
     freq1: number[],
     freq2: number[],
@@ -74,7 +74,7 @@ export type LineStatisticType = {
     total: number[]
 }
 
-export type LineFraudStatisticType = {
+export type LineHourlyStatisticType = {
     date: string[],
     freq: number[]
 }
@@ -92,5 +92,4 @@ export type DatasetType = {
     backgroundColor?: string,
     fill: boolean,
     lineTension: number
-
 }

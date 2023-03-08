@@ -1,6 +1,6 @@
-import { StatisticType, FraudStatisticType } from './types';
+import { DailyStatisticType, HourlyStatisticType } from "./types"
 
-export const statisticData: StatisticType[] = [
+export const statisticData: DailyStatisticType[] = [
     {
         date: "2020-05-04 00:00:00",
         freq1: 38,
@@ -103,7 +103,7 @@ export const statisticData: StatisticType[] = [
     }
 ]
 
-export const fraudStatistic: FraudStatisticType[] = [
+export const fraudStatistic: HourlyStatisticType[] = [
     {
         date: "2020-05-04 00:00:00",
         freq: 0
@@ -114,23 +114,23 @@ export const fraudStatistic: FraudStatisticType[] = [
     },
     {
         date: "2020-05-04 02:00:00",
-        freq: 0
+        freq: 8
     },
     {
         date: "2020-05-04 03:00:00",
-        freq: 0
+        freq: 9
     },
     {
         date: "2020-05-04 04:00:00",
-        freq: 0
+        freq: 1
     },
     {
         date: "2020-05-04 05:00:00",
-        freq: 0
+        freq: 3
     },
     {
         date: "2020-05-04 06:00:00",
-        freq: 10
+        freq: 0
     },
     {
         date: "2020-05-04 07:00:00",
@@ -146,7 +146,7 @@ export const fraudStatistic: FraudStatisticType[] = [
     },
     {
         date: "2020-05-04 10:00:00",
-        freq: 0
+        freq: 2
     },
     {
         date: "2020-05-04 11:00:00",
@@ -170,7 +170,7 @@ export const fraudStatistic: FraudStatisticType[] = [
     },
     {
         date: "2020-05-04 16:00:00",
-        freq: 0
+        freq: 1
     },
     {
         date: "2020-05-04 17:00:00",

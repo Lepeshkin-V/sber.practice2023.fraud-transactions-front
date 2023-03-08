@@ -1,4 +1,4 @@
-import { LineFraudStatisticType, LineStatisticType, LineType, SortConfigType, TransactionType,} from "./types"
+import { LineDailyStatisticType, LineHourlyStatisticType, LineType, SortConfigType, TransactionType,} from "./types"
 
 export const template_transaction: TransactionType = {
     id: 0,
@@ -34,10 +34,10 @@ export const template_transaction: TransactionType = {
 
 export const template_sortConfig: SortConfigType = {
     key: 0,
-    direction: true
+    direction: 0
 }
 
-export const template_line_statistic_data: LineStatisticType = {
+export const template_line_statistic_data: LineDailyStatisticType = {
     date: [],
     freq1: [],
     freq2: [],
@@ -48,7 +48,7 @@ export const template_line_statistic_data: LineStatisticType = {
     total: []
 }
 
-export const template_line_fraud_statistic_data: LineFraudStatisticType = {
+export const template_line_fraud_statistic_data: LineHourlyStatisticType = {
     date: [],
     freq: []
 }

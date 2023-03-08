@@ -1,4 +1,4 @@
-import { TransactionType } from "../../../../common/types";
+import { FraudType, TransactionType } from "../../../../common/types";
 import modalWindowStore from "../../../../strore/modalWindowStore";
 import style from "./transactionsTableCell.module.css"
 interface TransactionsTableCellProps {
@@ -13,22 +13,25 @@ const TransactionsTableCell = (props: TransactionsTableCellProps) => {
         modalWindowStore.setContent(props.transaction)
     }
 
-    const frodDesignate = (countFrod: number) => {
-        switch (countFrod) {
-            case 3:
-                return style.frod3
-            case 4:
-                return style.frod4
-            case 5:
-                return style.frod5
-            case 6:
-                return style.frod6
-            default:
-                return ""
+    const frodDesignate = (fraud: FraudType[]) => {
+        let sumFraud = 0;
+        fraud.forEach(f => {
+            sumFraud += f.scores;
+        })
+        if(sumFraud >= 0.6 && sumFraud <0.9){
+            return style.fraud4
         }
+        if(sumFraud >= 0.9 && sumFraud <1.5){
+            return style.fraud5
+        }
+        if(sumFraud >= 1.5){
+            return style.fraud6
+        }
+        return ""
     }
+    
     return (
-        <tr onClick={onOpen} className={frodDesignate(props.transaction.fraud.length)}>
+        <tr onClick={onOpen} className={frodDesignate(props.transaction.fraud)}>
             <td>{props.transaction.id}</td>
             <td>{new Date(props.transaction.date).toLocaleString()}</td>
             <td>{props.transaction.account}</td>

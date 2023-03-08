@@ -7,18 +7,17 @@ const TransactionsTableHeader = observer(() => {
 
     const direction = (columnName: columnsTable, name: string) => {
         if (columnName !== transactionsStore.sortConfig.key) {
-            return <th onClick={() => transactionsStore.sortTransactions(columnName)}>{name}</th>
+            return <th onClick={() => transactionsStore.getTransactions(columnName)}>{name}</th>
         } else {
-            if (columnName === transactionsStore.sortConfig.key && transactionsStore.sortConfig.direction === true) {
-                return <th onClick={() => transactionsStore.sortTransactions(columnName)}>{name} ↓</th>
+            if (columnName === transactionsStore.sortConfig.key && transactionsStore.sortConfig.direction === 0) {
+                return <th onClick={() => transactionsStore.getTransactions(columnName)}>{name} ↓</th>
             }
             else {
-                if (columnName === transactionsStore.sortConfig.key && transactionsStore.sortConfig.direction === false) {
-                    return <th onClick={() => transactionsStore.sortTransactions(columnName)}>{name} ↑</th>
+                if (columnName === transactionsStore.sortConfig.key && transactionsStore.sortConfig.direction === 1) {
+                    return <th onClick={() => transactionsStore.getTransactions(columnName)}>{name} ↑</th>
                 }
             }
         }
-
     }
 
     return (

@@ -6,6 +6,7 @@ import style from "./modalWindow.module.css"
 import { AiFillCloseCircle } from 'react-icons/ai'
 import { FaExclamationTriangle } from 'react-icons/fa'
 import { BsCheckCircleFill } from 'react-icons/bs'
+import { FraudType } from "../../common/types";
 
 const ModalWindow = observer(() => {
     const onClose = () => {
@@ -27,8 +28,12 @@ const ModalWindow = observer(() => {
 
     if (!modalWindowStore.visible) return null;
 
-    const frodDesignate = (countFrod: number) => {
-        if (countFrod  >= 3) {
+    const frodDesignate = (fraud: FraudType[]) => {
+        let sumFraud = 0;
+        fraud.forEach(f => {
+            sumFraud += f.scores;
+        })
+        if (sumFraud >= 0.6) {
             return <FaExclamationTriangle style={{ color: '#E85A4F', paddingBottom: 5, }} />
         }
         else
@@ -38,9 +43,8 @@ const ModalWindow = observer(() => {
     return (
         <div onClick={onClose} className={style.outer_area}>
             <div onClick={(e) => e.stopPropagation()} className={style.modal_window}>
-
                 <div className={style.modal_title}>
-                    <h3>Транзакция № {modalWindowStore.title} {frodDesignate(modalWindowStore.content.fraud.length)}</h3>
+                    <h3>Транзакция № {modalWindowStore.title} {frodDesignate(modalWindowStore.content.fraud)}</h3>
                     <span className={style.modal_close} onClick={onClose}>
                         < AiFillCloseCircle style={{ color: '#8E8D8a', fontSize: '35px' }} />
                     </span>

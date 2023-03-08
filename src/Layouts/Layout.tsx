@@ -5,6 +5,7 @@ import styles from './layout.module.css'
 type props = React.HTMLAttributes<HTMLDivElement>;
 
 const Layout = ({children}:props) => {
+    
     return (
         <body className={styles.wrapper}>
             <Header />
