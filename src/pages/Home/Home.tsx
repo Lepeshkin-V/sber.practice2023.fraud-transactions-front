@@ -10,17 +10,23 @@ import TransactionsTable from "../../components/TransactionsTable/transactionsTa
 import transactionsStore from "../../strore/transactionsStore";
 import style from "./home.module.css"
 import StatisticB from "../../components/Buttons/StatisticB/statisticB";
+import TransactionsLimit from "../../components/Pagination/transactionsLimit/transactionsLimit";
+import Loader from "../../components/Loader/loader";
 
 const Home = observer(() => {
-    const { page } = useParams();
-    if(page) {
+    const { fraud, limit, page } = useParams();
+    if (page) {
         const startTransaction = (Number(page) - 1) * transactionsStore.transactionsLimit + 1
         transactionsStore.setStartTransaction(startTransaction);
-    useEffect(() => {
+        transactionsStore.setLimitTransaction(Number(limit));
+        transactionsStore.setFraud((Number(fraud)));
+        useEffect(() => {
             transactionsStore.getTransactions();
-      }, [page]);
+        }, [fraud, limit, page]);
     }
-    
+    if(transactionsStore.loading === true) {
+        return <Loader />
+    }
     return (
         <div className={style.main_block}>
             <div className={style.buttons_block}>
@@ -31,9 +37,11 @@ const Home = observer(() => {
             </div>
             <TransactionsTable />
             < ModalWindow />
-            <Pagination maxPages={transactionsStore.pageLimit} />
+            <div className={style.pagination}>
+                <TransactionsLimit />
+                <Pagination maxPages={transactionsStore.pageLimit} />
+            </div>
         </div>
     );
 })
-
 export default Home;

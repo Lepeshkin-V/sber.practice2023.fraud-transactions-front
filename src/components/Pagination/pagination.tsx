@@ -1,9 +1,6 @@
 import {
-    createSearchParams,
     useNavigate,
-    useParams,
-    useSearchParams
-} from "react-router-dom";
+    useParams} from "react-router-dom";
 import styles from './pagination.module.css';
 
 interface PaginationProps {
@@ -11,26 +8,20 @@ interface PaginationProps {
 }
 
 const Pagination = ({ maxPages }: PaginationProps) => {
-    const { page } = useParams();
+    const { fraud, limit, page } = useParams();
+    const fr = Number(fraud);
+    const lim = Number(limit);
     const active = Number(page);
     const pagesToShow = 7;
-    const [searchValue] = useSearchParams();
-    const value = searchValue.get('value');
     const navigation = useNavigate();
 
     if (maxPages === 1 || maxPages === 0) {
         return <div />;
     }
 
-    const paginationNavigate = (num: number) => {
-        if (value)
+    const paginationNavigate = (fraud: number, num: number, lim: number) => {
             navigation({
-                pathname: `../page/${num}`,
-                search: `?${createSearchParams({ value })}`
-            });
-        else
-            navigation({
-                pathname: `../page/${num}`
+                pathname: `../fraud/${fraud}/limit/${lim}/page/${num}`
             });
     };
 
@@ -58,7 +49,7 @@ const Pagination = ({ maxPages }: PaginationProps) => {
             <ul className={styles.pagContainer}>
                 {active !== 1 ? (
                     <li>
-                        <div className={styles.pagElem} onClick={() => paginationNavigate(1)}>
+                        <div className={styles.pagElem} onClick={() => paginationNavigate(fr, 1, lim)}>
                             {'<<'}
                         </div>
                     </li>
@@ -67,14 +58,14 @@ const Pagination = ({ maxPages }: PaginationProps) => {
                     <li key={elem}>
                         <div className={elem === active
                             ? `${styles.pagElem} ${styles.active}`
-                            : styles.pagElem} onClick={() => paginationNavigate(elem)}>
+                            : styles.pagElem} onClick={() => paginationNavigate(fr, elem, lim)}>
                             {elem}
                         </div>
                     </li>
                 ))}
                 {active !== maxPages ? (
                     <li>
-                        <div className={styles.pagElem} onClick={() => paginationNavigate(maxPages)}>
+                        <div className={styles.pagElem} onClick={() => paginationNavigate(fr, maxPages, lim)}>
                             {'>>'}
                         </div>
                     </li>
