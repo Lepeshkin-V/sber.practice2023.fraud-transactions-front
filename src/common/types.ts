@@ -93,3 +93,14 @@ export type DatasetType = {
     fill: boolean,
     lineTension: number
 }
+
+export type PatternsType = {
+    fraud_id: number,
+    fraud_type: string,
+    scores: number,
+}
+
+export type ChangeScoresType = {
+    fraud_id: number,
+    scores: number
+}
