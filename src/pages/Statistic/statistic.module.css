@@ -4,3 +4,8 @@
     gap: 0.7rem;
 }
 
+.buttons_bar {
+    display: flex;
+    justify-content: space-between;
+}
+
