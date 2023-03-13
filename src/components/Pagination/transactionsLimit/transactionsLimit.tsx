@@ -8,10 +8,11 @@ const TransactionsLimit = () => {
     const active = Number(page);
     const navigation = useNavigate();
     const paginationNavigate = (fraud: number, num: number, lim: number) => {
-        if(Math.ceil(transactionsStore.totalData / lim) < num ){
+        if (Math.ceil(transactionsStore.totalData / lim) < num) {
             num = Math.ceil(transactionsStore.totalData / lim)
-            transactionsStore.pageLimit = num;
+            transactionsStore.setPageLimit(num);
         }
+        num = Math.trunc(((num - 1) * transactionsStore.transactionsLimit) / lim) + 1;
         navigation({
             pathname: `../fraud/${fraud}/limit/${lim}/page/${num}`
         });
