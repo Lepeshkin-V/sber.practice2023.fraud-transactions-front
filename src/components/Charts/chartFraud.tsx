@@ -28,9 +28,10 @@ const ChartFraud = observer(() => {
         date:[],
         freq:[],
     };
-    console.log(statisticStore.hourlyStatisticData);
+    const hour = new Date()
     statisticStore.hourlyStatisticData.forEach(d => {
-        l.date.push(new Date(d.date).toLocaleTimeString());
+        hour.setHours(Number(d.date), 0, 0);
+        l.date.push(hour.toLocaleTimeString());
         l.freq.push(d.freq);
     })
 
@@ -42,7 +43,7 @@ const ChartFraud = observer(() => {
                 label: "Подозрительные действия",
                 borderColor: '#d63031',
                 backgroundColor: "#dfe6e9",
-                fill: true,
+                fill: false,
                 lineTension: 0.5
             },
         ]
@@ -58,7 +59,7 @@ const ChartFraud = observer(() => {
                     },
                     title: {
                         display: true,
-                        text: 'Статистика подозрительных действий каждый час',
+                        text: `Статистика подозрительных действий каждый час за ${new Date(statisticStore.endDate).toLocaleDateString()}`,
                         fullSize:true,
                         font: {
                             size: 32
