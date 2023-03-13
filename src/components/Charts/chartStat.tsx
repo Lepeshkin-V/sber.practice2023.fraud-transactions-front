@@ -53,7 +53,7 @@ const ChartStat = observer(() => {
                 label: "Просроченный паспорт",
                 borderColor: '#fab1a0',
                 backgroundColor: "#dfe6e9",
-                fill: true,
+                fill: false,
                 lineTension: 0.5
             },
             {
@@ -61,7 +61,7 @@ const ChartStat = observer(() => {
                 label: "Чрезмерная частота транзакций",
                 borderColor: '#ff7675',
                 backgroundColor: "#dfe6e9",
-                fill: true,
+                fill: false,
                 lineTension: 0.5
             },
             {
@@ -69,7 +69,7 @@ const ChartStat = observer(() => {
                 label: "Большое количество отказов",
                 borderColor: '#e17055',
                 backgroundColor: "#dfe6e9",
-                fill: true,
+                fill: false,
                 lineTension: 0.5
             },
             {
@@ -77,7 +77,7 @@ const ChartStat = observer(() => {
                 label: "Быстрая смена локаций",
                 borderColor: '#d63031',
                 backgroundColor: "#dfe6e9",
-                fill: true,
+                fill: false,
                 lineTension: 0.5
             },
             {
@@ -85,7 +85,7 @@ const ChartStat = observer(() => {
                 label: "Большое количество транзакций",
                 borderColor: '#fd79a8',
                 backgroundColor: "#dfe6e9",
-                fill: true,
+                fill: false,
                 lineTension: 0.5
             },
             {
@@ -93,7 +93,7 @@ const ChartStat = observer(() => {
                 label: "Высокая ночная активность",
                 borderColor: '#e84393',
                 backgroundColor: "#dfe6e9",
-                fill: true,
+                fill: false,
                 lineTension: 0.5
             },
             {
@@ -101,7 +101,7 @@ const ChartStat = observer(() => {
                 label: "Всего транзакций",
                 borderColor: '#0984e3',
                 backgroundColor: "#dfe6e9",
-                fill: true,
+                fill: false,
                 lineTension: 0.5
             }
         ]
