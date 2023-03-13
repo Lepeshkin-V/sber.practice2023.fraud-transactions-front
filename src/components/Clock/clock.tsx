@@ -8,18 +8,21 @@ const Clock = () => {
     const refreshDate = () => {
         setDate(new Date());
     }
-    
+
     useEffect(() => {
         const timerId = setInterval(refreshDate, 1000);
         return () => {
-          clearInterval(timerId);
+            clearInterval(timerId);
         };
-      }, []);
+    }, []);
 
-    return(
-        <div className={style.clock}>
-            {date.toLocaleString()}
+    return (
+        <div className={style.clock_block}>
+            <div className={style.clock}>
+                {date.toLocaleString()}
+            </div>
         </div>
+
     );
 }
 

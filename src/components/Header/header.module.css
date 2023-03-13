@@ -1,19 +1,20 @@
 header {
-    flex: 0 0 auto;
-}
-.header {
     font-family: 'title';
-    text-align: center;
     border-bottom: 1px solid #dbdbdb;
     height: 10%;
     max-height: 100px;
     min-height: 50px;
     margin-bottom: 20px;
     color: #E85A4F;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
 }
 
 .title {
     font-size: 54px;
+    text-align: center;
 }
 
 @font-face {
