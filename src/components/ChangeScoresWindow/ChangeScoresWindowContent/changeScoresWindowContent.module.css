@@ -1,0 +1,24 @@
+input {
+    width: 30%;
+}
+
+.field_block {
+    min-height: 100px;
+}
+
+.search_blocks {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.label_block {
+    width: 50%;
+}
+
+.b_change {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
