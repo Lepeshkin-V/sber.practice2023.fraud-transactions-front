@@ -6,7 +6,7 @@ import { observer } from 'mobx-react-lite';
 
 const TransactionsTable = observer(() => {
     return (
-        <Table striped bordered hover className={style.table}>
+        <Table bordered hover className={style.table}>
             <TransactionsTableHeader />
             <TransactionsTableBody />
         </Table>

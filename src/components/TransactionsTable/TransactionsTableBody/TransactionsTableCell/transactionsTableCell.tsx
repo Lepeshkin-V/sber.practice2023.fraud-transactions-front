@@ -17,19 +17,20 @@ const TransactionsTableCell = (props: TransactionsTableCellProps) => {
         let sumFraud = 0;
         fraud.forEach(f => {
             sumFraud += f.scores;
-        })
-        if(sumFraud >= 0.6 && sumFraud <0.9){
+        });
+        sumFraud = Math.round(sumFraud * 10) / 10
+        if (sumFraud >= 0.6 && sumFraud < 0.9) {
             return style.fraud4
         }
-        if(sumFraud >= 0.9 && sumFraud <1.5){
+        if (sumFraud >= 0.9 && sumFraud <= 1.2) {
             return style.fraud5
         }
-        if(sumFraud >= 1.5){
+        if (sumFraud >= 1.5) {
             return style.fraud6
         }
         return ""
     }
-    
+
     return (
         <tr onClick={onOpen} className={frodDesignate(props.transaction.fraud)}>
             <td>{props.transaction.id}</td>

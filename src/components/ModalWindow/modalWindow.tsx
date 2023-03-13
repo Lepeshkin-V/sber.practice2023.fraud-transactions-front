@@ -28,23 +28,29 @@ const ModalWindow = observer(() => {
 
     if (!modalWindowStore.visible) return null;
 
-    const frodDesignate = (fraud: FraudType[]) => {
+    const fraudDesignate = (fraud: FraudType[]) => {
         let sumFraud = 0;
         fraud.forEach(f => {
             sumFraud += f.scores;
-        })
-        if (sumFraud >= 0.6) {
+        });
+        if (sumFraud >= 0.6 && sumFraud < 0.9) {
+            return <FaExclamationTriangle style={{ color: '#e8594f4d', paddingBottom: 5, }} />
+        }
+        if (sumFraud >= 0.9 && sumFraud <= 1.2) {
+            return <FaExclamationTriangle style={{ color: '#e8594f9a', paddingBottom: 5, }} />
+        }
+        if (sumFraud >= 1.5) {
             return <FaExclamationTriangle style={{ color: '#E85A4F', paddingBottom: 5, }} />
         }
         else
-            return <BsCheckCircleFill style={{ color: '#8E8D8a', paddingBottom: 5, fontSize:25 }} />
+            return <BsCheckCircleFill style={{ color: '#8E8D8a', paddingBottom: 5, fontSize: 25 }} />
     }
 
     return (
         <div onClick={onClose} className={style.outer_area}>
             <div onClick={(e) => e.stopPropagation()} className={style.modal_window}>
                 <div className={style.modal_title}>
-                    <h3>Транзакция № {modalWindowStore.title} {frodDesignate(modalWindowStore.content.fraud)}</h3>
+                    <h3>Транзакция № {modalWindowStore.title} {fraudDesignate(modalWindowStore.content.fraud)}</h3>
                     <span className={style.modal_close} onClick={onClose}>
                         < AiFillCloseCircle style={{ color: '#8E8D8a', fontSize: '35px' }} />
                     </span>

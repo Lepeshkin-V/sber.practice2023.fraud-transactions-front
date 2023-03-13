@@ -1,0 +1,33 @@
+.field_block {
+    min-height: 100px;
+}
+
+.search_blocks {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.b_search {
+    display: flex;
+    justify-content: center;
+}
+
+input {
+    border: 2px solid #a6a5a5;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0;
+    width: 50%;
+}
+
+input:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #bdbdbd;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
+}

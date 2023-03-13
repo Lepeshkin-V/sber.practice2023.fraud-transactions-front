@@ -10,7 +10,7 @@ export const routes: RouteObject[] = [
     {
         path: 'home',
         children: [
-            { path: '/home/fraud/:fraud/limit/:limit/page/:page', element: <Home />}
+            { path: '/home/fraud/:fraud/limit/:limit/page/:page', element: <Home />},
         ]
     },
     {

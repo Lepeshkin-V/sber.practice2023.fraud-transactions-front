@@ -4,6 +4,11 @@
     flex-direction: column;
     margin: 0 auto;
     flex-grow: 1;
+    
+}
+
+.no_transactions {
+    margin: auto auto;
 }
 
 .buttons_block {
