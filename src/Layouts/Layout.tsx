@@ -7,11 +7,11 @@ type props = React.HTMLAttributes<HTMLDivElement>;
 const Layout = ({children}:props) => {
     
     return (
-        <body className={styles.wrapper}>
+        <div className={styles.wrapper}>
             <Header />
             <main>{children}</main>
             <Footer />
-        </body>
+        </div>
     );
 
 }
